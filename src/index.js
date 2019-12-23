@@ -20,6 +20,7 @@ import { InputLabel, FormControl, Input, Button } from "@material-ui/core";
 function App() {
   const [state, toggle] = useState(true);
   const [completed, setCompleted] = useState(0);
+  const [inputValue, setInputValue] = useState('');
 
   const { x } = useSpring({
     from: { x: 0 },
@@ -41,16 +42,16 @@ function App() {
           maxWidth: 200
         }}
       >
-        <FormControl>
-          <InputLabel htmlFor="my-input">Email :)</InputLabel>
-          <Input id="my-input" aria-describedby="my-helper-text" />
-        </FormControl>
-        <br />
-        <br />
-
-        <Button variant="contained" color="secondary">
-          Save
-        </Button>
+        <div id="mc_embed_signup">
+<form action="https://gmail.us4.list-manage.com/subscribe/post?u=17ba4a4dee99db6a28e2bae8d&amp;id=efb9275ef0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Subscribe</label>
+	<input onChange={(e) => setInputValue(e.target.value)} type="email" value={inputValue} name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required />
+    <div style={{position: 'absolute', left: '-5000px'}} aria-hidden="true"><input type="text" name="b_17ba4a4dee99db6a28e2bae8d_efb9275ef0" tabindex="-1" value="" /></div>
+    <div className="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button" /></div>
+    </div>
+</form>
+</div>
       </div>
     );
   }
